@@ -2,6 +2,15 @@ import { FC } from "react";
 
 import { Slider as MuiSlider, SliderProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { Tooltip } from "..";
+import { SliderEvent } from "../../types";
+import logo from "../../assets/sportsnetwork.png";
+
+import "./Slider.css";
+
+interface ISliderProps extends SliderProps {
+  events: SliderEvent[] | null;
+}
 
 const StaffTribesSlider = styled(MuiSlider)(({ theme }) => ({
   color: "rgb(30, 85, 107)",
@@ -60,6 +69,28 @@ const StaffTribesSlider = styled(MuiSlider)(({ theme }) => ({
   },
 }));
 
-export const Slider: FC<SliderProps> = (props) => (
-  <StaffTribesSlider valueLabelDisplay="on" step={1} {...props} />
-);
+export const Slider: FC<ISliderProps> = (props) => {
+  const { events } = props;
+
+  return (
+    <div className="slider">
+      <StaffTribesSlider valueLabelDisplay="on" step={1} {...props} />
+      {events?.map((el, index) => (
+        <Tooltip key={index} startTime={el.start}>
+          <button
+            type="button"
+            className="eventSlider"
+            style={{
+              width: `${el.width}px`,
+              left: `${el.leftPosition}px`,
+            }}
+          >
+            <div className="eventBar">
+              <img className="logo" src={logo} alt="event" />
+            </div>
+          </button>
+        </Tooltip>
+      ))}
+    </div>
+  );
+};

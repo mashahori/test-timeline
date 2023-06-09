@@ -1,12 +1,9 @@
 .eventButton {
   border: none;
-  background-color: transparent;
   cursor: pointer;
   padding: 0;
-  border-radius: 50%;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
+  background-color: rgb(33, 186, 69);
+  width: 100%;
+  height: 3px;
+  position: relative;
 }

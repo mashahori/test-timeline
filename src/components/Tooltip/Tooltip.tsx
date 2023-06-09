@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactElement } from "react";
 import {
   Tooltip as MuiTooltip,
   TooltipProps,
@@ -6,11 +6,13 @@ import {
   Zoom,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { EventInfo } from "../EventInfo";
 
 import "./Tooltip.css";
 
 interface ITooltipProps {
-  children: ReactNode;
+  children: ReactElement;
+  startTime: number;
 }
 
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
@@ -25,10 +27,12 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export const Tooltip: FC<ITooltipProps> = ({ children }) => (
-  <LightTooltip title={children} placement="top" TransitionComponent={Zoom}>
-    <button className="eventButton" type="button">
-      <img className="logo" src="sportsnetwork.png" alt="event" />
-    </button>
+export const Tooltip: FC<ITooltipProps> = ({ children, startTime }) => (
+  <LightTooltip
+    title={<EventInfo startTime={startTime} />}
+    placement="top"
+    TransitionComponent={Zoom}
+  >
+    {children}
   </LightTooltip>
 );
