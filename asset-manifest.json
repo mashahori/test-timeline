@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/test-timeline/static/css/main.9af1c81f.css",
-    "main.js": "/test-timeline/static/js/main.cc19d9ea.js",
+    "main.css": "/test-timeline/static/css/main.9f9cc252.css",
+    "main.js": "/test-timeline/static/js/main.74de376f.js",
     "static/js/787.e9ece8b5.chunk.js": "/test-timeline/static/js/787.e9ece8b5.chunk.js",
+    "static/media/sportsnetwork.png": "/test-timeline/static/media/sportsnetwork.574933ab39589b9b3a63.png",
     "index.html": "/test-timeline/index.html",
-    "main.9af1c81f.css.map": "/test-timeline/static/css/main.9af1c81f.css.map",
-    "main.cc19d9ea.js.map": "/test-timeline/static/js/main.cc19d9ea.js.map",
+    "main.9f9cc252.css.map": "/test-timeline/static/css/main.9f9cc252.css.map",
+    "main.74de376f.js.map": "/test-timeline/static/js/main.74de376f.js.map",
     "787.e9ece8b5.chunk.js.map": "/test-timeline/static/js/787.e9ece8b5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9af1c81f.css",
-    "static/js/main.cc19d9ea.js"
+    "static/css/main.9f9cc252.css",
+    "static/js/main.74de376f.js"
   ]
 }
