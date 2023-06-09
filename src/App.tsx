@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
 
-function App() {
+import { Tooltip, Slider, EventInfo } from "./components";
+import { marksFirst, marksSecond } from "./constants/slider";
+
+import "./App.css";
+
+export const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="slider">
+        <div className="firstSlider">
+          <Slider min={6} max={18} marks={marksFirst} defaultValue={[10, 12]} />
+        </div>
+        <div className="event">
+          <Tooltip>
+            <EventInfo />
+          </Tooltip>
+        </div>
+        <div className="secondSlider">
+          <Slider
+            min={20}
+            max={24}
+            marks={marksSecond}
+            defaultValue={[20, 22]}
+          />
+        </div>
+      </div>
     </div>
   );
-}
-
-export default App;
+};
